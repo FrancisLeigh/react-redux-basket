@@ -30,17 +30,16 @@ body {
 
 .quantity-ctrl {
   max-width: 40px;
-  cursor: wait;
-  &:disabled {
-    cursor: wait;
-  }
+  cursor: pointer;
 }
 
 .button {
   border: none;
   outline: none;
   cursor: pointer;
-
+  &:disabled {
+    pointer-events: none;
+  }
   &--clear {
     background: transparent;
   }

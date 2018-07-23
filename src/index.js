@@ -4,9 +4,9 @@ import '@styles/styles.scss'
 /**
  * Welcome! This project has been setup with webpack to — hopefully —
  * just work. You should be able to write JS here and it will be compiled
- * into a file called "bundle.js", which is referenced in the 
+ * into a file called "bundle.js", which is referenced in the
  * `public/index.html` file.
- * 
+ *
  * You can either dump all your JS here, or organise it using import/export
  * as this build should fully support ES Modules.
  */
@@ -23,13 +23,19 @@ import trump from '@images/trump.jpg'
  * the code below to get started...
  */
 
-// import React from 'react'
-// import ReactDOM from 'react-dom'
+import React from 'react'
+import { render } from 'react-dom'
 
-// class App extends React.Component {
-//   render() {
-//     return <div>React app...</div>
-//   }
-// }
+import { Provider } from 'react-redux'
+import { createStore } from 'redux'
+import store from './store/reducers'
 
-// ReactDOM.render(<App />, document.getElementById('root'))
+import App from './components/views/App'
+
+const s = createStore(store)
+render(
+  <Provider store={s}>
+    <App />
+  </Provider>,
+  document.getElementById('root')
+)

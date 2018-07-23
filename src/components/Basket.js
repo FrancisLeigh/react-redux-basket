@@ -19,7 +19,7 @@ const Basket = ({ products, clearQuantities }) => {
         </h1>
         <div className="flex flex--fit flex--row">
           <button className="button" onClick={() => clearQuantities()}>Clear</button>
-          <button className="button button--primary">Checkout ></button>
+          <button className="button button--primary" disabled>Checkout ></button>
         </div>
       </div>
     </div>

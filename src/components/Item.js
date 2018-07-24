@@ -4,18 +4,18 @@ import QuantityController from './QuantityController'
 import ProductRemover from './ProductRemover'
 const Item = ({ id, name, quantity, price }) => {
   return (
-    <div className="basket__item flex--center">
+    <li className="basket__item flex--center flex--padd-x">
       <div className="basket__item__content">
-        <h1>{name}</h1>
+        <span>{name}</span>
       </div>
       <div className="basket__item__content">
-        <QuantityController id={id} quantity={quantity} />
+        <QuantityController id={id} quantity={quantity} name/>
       </div>
-      <div className="basket__item__content flex flex--row flex--center">
-        <h2 className="basket__item__price">£{price.toFixed(2)}</h2>
+      <div className="basket__item__content flex flex--row flex--center flex--end">
+        <span className="basket__item__price">£{price.toFixed(2)}</span>
         <ProductRemover id={id}/>
       </div>
-    </div>
+    </li>
   )
 }
 

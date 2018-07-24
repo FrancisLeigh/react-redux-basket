@@ -8,11 +8,12 @@ const Basket = ({ products, clearQuantities }) => {
   return (
     <div className="basket">
       <div className="basket flex--wider basket flex--padd">
+      <ul className="basket flex--wider basket flex--padd">
         {products.map((props) => (
             <Item key={`product-${props.id}`} {...props} />
           )
         )}
-      </div>
+      </ul>
       <div className="basket__footer flex flex--row flex--center">
         <h1 className="flex flex--fit">
           £<BasketTotal />

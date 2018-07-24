@@ -41,7 +41,6 @@ const BasketReducer = (state = defaultStore, action) => {
 
     case actions.CHANGE_QUANTITY:
       let { id, quantity } = action
-      console.log(id, quantity)
       return state.map(product => {
         if (product.id === id) {
           product.quantity = quantity

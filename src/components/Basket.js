@@ -7,7 +7,6 @@ import BasketTotal from './Total'
 const Basket = ({ products, clearQuantities }) => {
   return (
     <div className="basket">
-      <div className="basket flex--wider basket flex--padd">
       <ul className="basket flex--wider basket flex--padd">
         {products.map((props) => (
             <Item key={`product-${props.id}`} {...props} />
@@ -15,12 +14,12 @@ const Basket = ({ products, clearQuantities }) => {
         )}
       </ul>
       <div className="basket__footer flex flex--row flex--center">
-        <h1 className="flex flex--fit">
+        <span className="text--large flex flex--fit">
           £<BasketTotal />
-        </h1>
+        </span>
         <div className="flex flex--fit flex--row">
           <button className="button" onClick={() => clearQuantities()}>Clear</button>
-          <button className="button button--primary" disabled>Checkout ></button>
+          <a href="/to-comparison-page"className="button button--primary">Checkout ></a>
         </div>
       </div>
     </div>

@@ -53,10 +53,6 @@ const BasketReducer = (state = defaultStore, action) => {
         product.quantity = 0
         return product
       }))
-
-    case actions.REMOVE_PRODUCT:
-      return state.filter(({id}) => id !== action.id)
-
     default:
       return state
   }

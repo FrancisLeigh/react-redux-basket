@@ -1,7 +1,7 @@
 {
   "name": "fe-test",
   "version": "0.0.1",
-  "description": "A base repository for front-end tests at MMT Digital",
+  "description": "FE React+Redux test",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,12 +9,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@bitbucket.org:mmtdigital/fe-test.git"
+    "url": "https://github.com/FrancisLeigh/react-redux-basket.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "homepage": "https://bitbucket.org/mmtdigital/fe-test",
+  "homepage": "https://github.com/FrancisLeigh/react-redux-basket",
   "devDependencies": {
     "autoprefixer": "^7.1.4",
     "babel-core": "^6.26.0",

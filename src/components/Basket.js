@@ -4,6 +4,7 @@ import { clearQuantities } from '../store/actions'
 
 import Item from './Item'
 import BasketTotal from './Total'
+import DiscountController from './DiscountController'
 const Basket = ({ products, clearQuantities }) => {
   return (
     <div className="basket">
@@ -21,14 +22,19 @@ const Basket = ({ products, clearQuantities }) => {
           <button className="button" onClick={() => clearQuantities()}>Clear</button>
           <a href="/to-comparison-page"className="button button--primary">Checkout ></a>
         </div>
+        <div className="flex flex-fit flex--row">
+          <DiscountController />
+        </div>
       </div>
     </div>
   )
 }
 
-const mapStateToProps = state => ({
-  products: state
-})
+const mapStateToProps = ({ items }) => {
+  return {
+    products: items
+  }
+}
 
 const mapDispatchToProps = dispatch => ({
   clearQuantities: () => dispatch(clearQuantities())

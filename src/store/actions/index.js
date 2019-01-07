@@ -5,6 +5,13 @@ export const addProduct = payload => ({
   payload
 })
 
+export const applyDiscount = payload => ({
+  type: actions.APPLY_DISCOUNT,
+  payload
+})
+
+export const removeDiscount = () => ({ type: actions.REMOVE_DISCOUNT })
+
 export const clearQuantities = () => ({ type: actions.CLEAR_QUANTITIES })
 
 export const changeQuantity = (id, quantity) => ({ type: actions.CHANGE_QUANTITY, id, quantity })

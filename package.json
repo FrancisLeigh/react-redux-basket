@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node -r babel-register node_modules/webpack-dev-server/bin/webpack-dev-server.js --hot --inline --config config/webpack/webpack.config.js"
+    "start": "node -r babel-register node_modules/webpack-dev-server/bin/webpack-dev-server.js --hot --inline --config config/webpack/webpack.config.js & nodemon basket_api"
   },
   "repository": {
     "type": "git",
@@ -53,11 +53,15 @@
     "webpack-merge": "^4.1.0"
   },
   "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
     "http-server": "^0.10.0",
     "jquery": "^3.2.1",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0",
+    "react": "16.7.0-alpha.0",
+    "react-dom": "16.7.0-alpha.0",
     "react-redux": "^5.0.7",
-    "redux": "^4.0.0"
+    "redux": "^4.0.0",
+    "redux-thunk": "^2.3.0",
+    "reselect": "^4.0.0"
   }
 }

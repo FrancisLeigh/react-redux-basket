@@ -5,7 +5,7 @@ body {
 .basket {
   display: flex;
   flex-direction: column;
-  max-width: 800px;
+  max-width: 500px;
 
   &__item {
     display: flex;
@@ -90,9 +90,14 @@ body {
 
 a { text-decoration: none }
 
-
 .text {
   &--large {
     font-size: 2rem;
+  }
+}
+
+.input {
+  &--half-width {
+    width: 50%;
   }
 }

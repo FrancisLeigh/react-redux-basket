@@ -15,14 +15,16 @@ const Basket = ({ products, clearQuantities }) => {
         )}
       </ul>
       <div className="basket__footer flex flex--row flex--center">
-        <span className="text--large flex flex--fit">
+        <span className="text--large flex flex--fit flex--row">
           £<BasketTotal />
         </span>
-        <div className="flex flex--fit flex--row">
+        <div className="flex flex--row">
           <button className="button" onClick={() => clearQuantities()}>Clear</button>
           <a href="/to-comparison-page"className="button button--primary">Checkout ></a>
         </div>
-        <div className="flex flex-fit flex--row">
+      </div>
+      <div className="basket__footer">
+        <div className="flex flex-fit">
           <DiscountController />
         </div>
       </div>

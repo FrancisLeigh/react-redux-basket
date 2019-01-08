@@ -10,23 +10,24 @@ const DiscountController = ({ discount, applyDiscount, removeDiscount }) => {
   }
   return (
     <div>
-      <input
-      placeholder="XXXXXX"
-      minLength="6" maxLength="6"
-      onChange={e => setDiscount(e.target.value)}
-      value={discountCode}
-      className="flex flex--fit" />
+      <label className="flex flex--end flex--padd-x">
+        Discount Code
+        <input
+        placeholder="XXXXXX"
+        minLength="6" maxLength="6"
+        onChange={e => setDiscount(e.target.value)}
+        value={discountCode}
+        className="input input--half-width"/>
+      </label>
 
       <button
       disabled={discountCode.length !== 6}
-      onClick={() => applyDiscount(discountCode)}
-      className="button button--primary">
+      onClick={() => applyDiscount(discountCode)}>
         Apply Discount
       </button>
 
       {discount && <button
-      onClick={() => handleRemoveDiscount()}
-      className="button">
+      onClick={() => handleRemoveDiscount()}>
         Remove Discount
       </button>}
 
@@ -45,7 +46,7 @@ const mapDispatchToProps = dispatch => ({
   removeDiscount: () => dispatch(removeDiscount())
 })
 
-const mapStateToProps = ({ basket: { discount } }) => ({
+const mapStateToProps = ({ meta: { discount } }) => ({
   discount
 })
 

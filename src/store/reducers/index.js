@@ -7,7 +7,7 @@ const defaultStore = {
   discount: null,
 }
 
-const BasketReducer = (state = defaultStore, action) => {
+const BasketMeta = (state = defaultStore, action) => {
   switch (action.type) {
     case actions.APPLY_DISCOUNT:
       return { ...state, discount: action.payload }
@@ -18,4 +18,4 @@ const BasketReducer = (state = defaultStore, action) => {
   }
 }
 
-export default combineReducers({ basket: BasketReducer, items: ItemsReducer })
+export default combineReducers({ meta: BasketMeta, items: ItemsReducer })

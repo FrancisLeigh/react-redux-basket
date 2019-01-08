@@ -11,6 +11,8 @@ const discounts = {
   30: ['C10CCC', 'XY2544']
 }
 
+
+app.get('/discounts', (req, res) => res.json(discounts))
 app.get('/discounts/:discountCode', (req, res) => {
   const DISCOUNT = Object.keys(discounts).find(dk => discounts[dk].indexOf(req.params.discountCode) !== -1) || 0
   res.json({

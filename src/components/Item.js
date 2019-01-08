@@ -9,10 +9,10 @@ const Item = ({ id, name, quantity, price }) => {
         <span>{name}</span>
       </div>
       <div className="basket__item__content">
-        <QuantityController id={id} quantity={quantity} name/>
+        <span className="basket__item__price">£{price.toFixed(2)}</span>
       </div>
       <div className="basket__item__content flex flex--row flex--center flex--end">
-        <span className="basket__item__price">£{price.toFixed(2)}</span>
+        <QuantityController id={id} quantity={quantity} name/>
         <ProductRemover id={id}/>
       </div>
     </li>

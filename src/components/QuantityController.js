@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { changeQuantity } from '../store/actions'
+import { changeQuantity } from 'Store/actions'
 
 const QuantityController = ({ id, quantity, changeQuantity }) => (
   <div>

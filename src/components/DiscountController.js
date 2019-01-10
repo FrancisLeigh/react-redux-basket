@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
-import { applyDiscount, removeDiscount } from '../store/actions'
+import { applyDiscount, removeDiscount } from 'Store/actions'
 
 const DiscountController = ({ discount, applyDiscount, removeDiscount }) => {
   const [discountCode, setDiscount] = useState('')

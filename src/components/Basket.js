@@ -1,10 +1,10 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { clearQuantities } from '../store/actions'
+import { clearQuantities } from 'Store/actions'
 
-import Item from './Item'
-import BasketTotal from './Total'
-import DiscountController from './DiscountController'
+import Item from 'Components/Item'
+import BasketTotal from 'Components/Total'
+import DiscountController from 'Components/DiscountController'
 const Basket = ({ products, clearQuantities }) => {
   return (
     <div className="basket">

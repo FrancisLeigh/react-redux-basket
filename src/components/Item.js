@@ -1,7 +1,7 @@
 import React from 'react'
 
-import QuantityController from './QuantityController'
-import ProductRemover from './ProductRemover'
+import QuantityController from 'Components/QuantityController'
+import ProductRemover from 'Components/ProductRemover'
 const Item = ({ id, name, quantity, price }) => {
   return (
     <li className="basket__item flex--center flex--padd-x">

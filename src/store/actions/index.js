@@ -1,4 +1,4 @@
-import actions from '../../constants/actions'
+import actions from 'Constants/actions'
 
 export const addProduct = payload => ({
   type: actions.ADD_PRODUCT,

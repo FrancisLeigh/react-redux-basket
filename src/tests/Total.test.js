@@ -1,6 +1,6 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import { Total } from '../components/Total'
+import { Total } from 'Components/Total'
 
 const MockProps = { total: 100, discountedTotal: 50 }
 

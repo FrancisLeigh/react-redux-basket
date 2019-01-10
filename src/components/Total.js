@@ -1,22 +1,26 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { discountedTotalSelector, totalSelector } from '../store/selectors'
+import { discountedTotalSelector, totalSelector } from 'Store/selectors'
 
-const Total = ({ total, discountedTotal }) => {
+export const Total = ({ total, discountedTotal }) => {
   const discounted = discountedTotal !== total
   return (
     <React.Fragment>
+
       <span>
         { discounted && discountedTotal.toFixed(2) }
       </span>
+
       <span
       style={{
         textDecoration: discounted && 'line-through',
         color: discounted && 'red'
       }}
-      className={ discounted && 'flex flex--padd-y' }>
+
+      className={ discounted ? 'flex flex--padd-y' : undefined }>
         { total.toFixed(2) }
       </span>
+
     </React.Fragment>)
 }
 

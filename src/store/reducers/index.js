@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux'
 
-import actions from '../../constants/actions'
-import ItemsReducer from './items'
+import actions from 'Constants/actions'
+import ItemsReducer from 'Store/reducers/items'
 
 export const DefaultMeta = { discount: null }
 

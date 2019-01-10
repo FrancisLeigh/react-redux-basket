@@ -1,4 +1,4 @@
-import actions from '../../constants/actions'
+import actions from 'Constants/actions'
 const ID = () => Math.random().toFixed(6)
 export const DefaultItems = [
   {

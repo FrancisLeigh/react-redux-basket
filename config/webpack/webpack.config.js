@@ -25,6 +25,7 @@ export default {
       'Store': path.resolve(__dirname, '../../src/store'),
       'Styles': path.resolve(__dirname, '../../src/styles'),
       'Assets': path.resolve(__dirname, '../../src/assets'),
+      'Constants': path.resolve(__dirname, '../../src/constants')
     },
     extensions: ['.js']
   },

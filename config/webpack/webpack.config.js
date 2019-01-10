@@ -19,6 +19,16 @@ export default {
     bundle: path.resolve(root, 'src')
   },
 
+  resolve: {
+    alias: {
+      'Components': path.resolve(__dirname, '../../src/components'),
+      'Store': path.resolve(__dirname, '../../src/store'),
+      'Styles': path.resolve(__dirname, '../../src/styles'),
+      'Assets': path.resolve(__dirname, '../../src/assets'),
+    },
+    extensions: ['.js']
+  },
+
   output: {
     path: path.resolve(root, 'build/assets'),
     publicPath: `/assets/`,

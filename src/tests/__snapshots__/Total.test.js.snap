@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Total /> Should render total and discounted total 1`] = `
+<Fragment>
+  <span>
+    50.00
+  </span>
+  <span
+    className="flex flex--padd-y"
+    style={
+      Object {
+        "color": "red",
+        "textDecoration": "line-through",
+      }
+    }
+  >
+    100.00
+  </span>
+</Fragment>
+`;

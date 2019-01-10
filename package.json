@@ -4,7 +4,7 @@
   "description": "FE React+Redux test",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
+    "test": "NODE_PATH=./src jest",
     "test_update": "jest --updateSnapshot",
     "start": "node -r babel-register node_modules/webpack-dev-server/bin/webpack-dev-server.js --hot --inline --config config/webpack/webpack.config.js & nodemon basket_api"
   },

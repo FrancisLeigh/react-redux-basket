@@ -4,9 +4,9 @@ import Basket from 'Components/Basket'
 class App extends React.Component {
   render() {
     return (
-      <div>
+      <React.Fragment>
         <Basket />
-      </div>
+      </React.Fragment>
     )
   }
 }

@@ -1,6 +1,6 @@
 import actions from '../../constants/actions'
 const ID = () => Math.random().toFixed(6)
-const defaultStore = [
+export const DefaultItems = [
   {
     id: ID(),
     name: 'Mountain Dew',
@@ -21,7 +21,7 @@ const defaultStore = [
   }
 ]
 
-const ItemsReducer = (state = defaultStore, action) => {
+const ItemsReducer = (state = DefaultItems, action) => {
   switch (action.type) {
     case actions.REMOVE_PRODUCT:
       return state.filter(({ id }) => id !== action.id)

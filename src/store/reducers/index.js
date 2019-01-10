@@ -3,11 +3,9 @@ import { combineReducers } from 'redux'
 import actions from '../../constants/actions'
 import ItemsReducer from './items'
 
-const defaultStore = {
-  discount: null,
-}
+export const DefaultMeta = { discount: null }
 
-const BasketMeta = (state = defaultStore, action) => {
+const BasketMeta = (state = DefaultMeta, action) => {
   switch (action.type) {
     case actions.APPLY_DISCOUNT:
       return { ...state, discount: action.payload }

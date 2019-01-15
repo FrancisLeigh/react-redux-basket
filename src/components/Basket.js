@@ -5,15 +5,16 @@ import { clearQuantities } from 'Store/actions'
 import Item from 'Components/Item'
 import BasketTotal from 'Components/Total'
 import DiscountController from 'Components/DiscountController'
+import FlexContainer from 'Components/layouts/flex'
 const Basket = ({ products, clearQuantities }) => {
   return (
-    <div className="basket">
-      <ul className="basket flex--wider basket flex--padd">
+    <FlexContainer direction="column" maxWidth="500">
+      <FlexContainer as="ul" direction="column" grow="2" padding={[1, 1, 1, 1]}>
         {products.map((props) => (
             <Item key={`product-${props.id}`} {...props} />
           )
         )}
-      </ul>
+      </FlexContainer>
       <div className="basket__footer flex flex--row flex--center">
         <span className="text--large flex flex--fit flex--row">
           £<BasketTotal />
@@ -28,7 +29,7 @@ const Basket = ({ products, clearQuantities }) => {
           <DiscountController />
         </div>
       </div>
-    </div>
+    </FlexContainer>
   )
 }
 

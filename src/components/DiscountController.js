@@ -1,15 +1,24 @@
+import 'regenerator-runtime/runtime'
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
 import { applyDiscount, removeDiscount } from 'Store/actions'
 
-const DiscountController = ({ discount, applyDiscount, removeDiscount }) => {
+const DiscountController = ({ discount: { value, valid }, applyDiscount, removeDiscount }) => {
   const [discountCode, setDiscount] = useState('')
+  const allowSubmission = discountCode.length === 6
   const handleRemoveDiscount = () => {
     setDiscount('')
     removeDiscount()
   }
+  const handleSubmit = e => {
+    e.preventDefault()
+    if (allowSubmission) {
+      applyDiscount(discountCode)
+    }
+  }
+
   return (
-    <div>
+    <form onSubmit={handleSubmit}>
       <label className="flex flex--end flex--padd-x">
         Discount Code
         <input
@@ -21,29 +30,32 @@ const DiscountController = ({ discount, applyDiscount, removeDiscount }) => {
       </label>
 
       <button
-      disabled={discountCode.length !== 6}
-      onClick={() => applyDiscount(discountCode)}>
+      disabled={!allowSubmission}
+      type="submit">
         Apply Discount
       </button>
 
-      {discount && <button
+      {valid && <button
       onClick={() => handleRemoveDiscount()}>
         Remove Discount
       </button>}
 
-      {discount && <span>{discount}% off</span>}
-    </div>
+      {valid && <span>{ value }% off</span>}
+    </form>
   )
 }
 
 const mapDispatchToProps = dispatch => ({
-  applyDiscount: discountCode => {
-    return fetch(`http://localhost:3000/discounts/${discountCode}`)
-    .then(res => {
-      return dispatch(applyDiscount(Math.floor(Math.random() * 100) + 1))
-    })
+  async applyDiscount (discountCode) {
+    let res = await fetch(`http://localhost:3000/discounts/${discountCode}`)
+    let json = await res.json()
+
+    return dispatch(applyDiscount(json))
+
   },
-  removeDiscount: () => dispatch(removeDiscount())
+  removeDiscount() {
+    return dispatch(removeDiscount())
+  }
 })
 
 const mapStateToProps = ({ meta: { discount } }) => ({

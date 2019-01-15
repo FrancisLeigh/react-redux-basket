@@ -3,7 +3,7 @@ import { createSelector } from 'reselect'
 const getMultiple = (num, modifier) => +num * modifier
 
 const getItemsCombinedPrice = ({ items }) => items.reduce((sum, { price, quantity }) => sum + getMultiple(price, quantity), 0)
-const getDiscount = ({ meta }) => meta.discount
+const getDiscount = ({ meta }) => meta.discount.value
 
 export const discountedTotalSelector = createSelector(
   getDiscount,

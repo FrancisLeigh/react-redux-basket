@@ -14,10 +14,12 @@ const discounts = {
 
 app.get('/discounts', (req, res) => res.json(discounts))
 app.get('/discounts/:discountCode', (req, res) => {
-  const DISCOUNT = Object.keys(discounts).find(dk => discounts[dk].indexOf(req.params.discountCode) !== -1) || 0
+  const DISCOUNT = Object.keys(discounts).find(dk => discounts[dk].indexOf(req.params.discountCode) !== -1) || false
+
   res.json({
-    value: +DISCOUNT,
-    code: req.params.discountCode
+    value: !DISCOUNT ? 0 : +DISCOUNT,
+    code: req.params.discountCode,
+    valid: !!DISCOUNT
   })
 })
 
